@@ -1,0 +1,27 @@
+
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+
+<body>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCHmqvGhdgEk2IveD_qmW35qrIcgTqTn3U",                             
+    authDomain: "myworkinprogress-7b0d7.firebaseapp.com",
+    databaseURL: "https://myworkinprogress-7b0d7.firebaseio.com",
+    storageBucket: "myworkinprogress-7b0d7.appspot.com",                       
+    messagingSenderId: "1055454693072"        
+  }
+  firebase.initializeApp(config);
+
+  function writeUserData(userId, name, email, imageUrl) {                                  
+  firebase.database().ref('users/' + userId).set({                 
+    username: name,                
+    email: email, 
+    profile_picture : imageUrl
+  });         
+}
+</script>                                                     
+	<button onclick="writeUserData('hih', 'bob', 'bob@vov.bob', 'bob.bob/bob.png')">
+		Submit User Data 
+	</button>
+</body>
